@@ -9,3 +9,5 @@ class Store(models.Model):
     company=models.ForeignKey(Company,on_delete=models.CASCADE,null=True,blank=True)
     store_number=models.CharField(max_length=200)
     address=models.TextField()
+    def __str__(self) -> str:
+        return self.store_number

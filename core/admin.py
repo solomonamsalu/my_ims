@@ -5,5 +5,6 @@ class CompanyAdmin(admin.ModelAdmin):
     fields=['name']
 class StoreAdmin(admin.ModelAdmin):
     list_display=['store_number','company']
+    fields=['store_number','company']
 admin.site.register(Company,CompanyAdmin)
 admin.site.register(Store,StoreAdmin)

@@ -1,7 +1,7 @@
 from enum import unique
 from django.db import models
 
-from core.models import Company
+from core.models import Company,Store
 
 class Supplier(models.Model):
     company=models.ForeignKey(Company,on_delete=models.CASCADE,null=True,blank=True,related_name='suppliers')
@@ -12,3 +12,16 @@ class Supplier(models.Model):
     address=models.TextField()
     def __str__(self) -> str:
         return self.first_name + " " + self.last_name
+
+class Item(models.Model):
+    name=models.CharField(max_length=200)
+    store=models.ForeignKey(Store,on_delete=models.CASCADE, null=True,blank=True,related_name='items')
+    sku_number=models.CharField(max_length=200)
+    selling_price=models.FloatField()
+    cost_price=models.FloatField()
+    max_stock=models.IntegerField()
+    onhand_stock=models.IntegerField()
+    reorder_point=models.IntegerField()
+    preferred_supplier=models.ForeignKey(Supplier,on_delete=models.CASCADE,related_name='items')
+    def __str__(self) -> str:
+        return self.name
