@@ -1,18 +1,41 @@
+{% extends "layouts/base.html"%}
+{% block msg%}
 <div class="container">
-    <h1>items</h1>
+    <h1>item detail</h1>
+   
+    
 <table class="table table-bordered table-hover table-dark">
     <thead class="table-success">
     <tr >
-        <h1><th>name</th></h1>
+        <th>name</th>
+        <th>store</th>
+        <th>SKU number</th>
         <th>cost_price</th>
         <th>selling_price</th>
+        <th>maxstock</th>
+        <th>onhand stock</th>
+        <th>reorder point</th>
+        <th>supplier</th>
+        <th></th>
+        
     </tr></thead>
-    {%for i in item_list%}
+    
     <tr>
-        <td>{{i.name}}</td>
-        <td>{{i.cost_price}}</td>
-        <td>{{i.selling_price}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.store}}</td>
+        <td>{{item.sku_number}}</td>
+        <td>{{item.cost_price}}</td>
+        <td>{{item.selling_price}}</td>
+        <td>{{item.max_stock}}</td>
+        <td>{{item.onhand_stock}}</td>
+        <td>{{item.reorder_point}}</td>
+        <td>{{item.preferred_supplier}}</td>
+        
+
+
+
 </tr>
-{%endfor%}
 </table>
 </div>
+</div>
+{% endblock%}

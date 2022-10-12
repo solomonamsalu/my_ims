@@ -4,6 +4,6 @@ from .models import Item,Supplier
 from django.views import generic
 class ItemList(generic.ListView):
     model=Item    
-class ItemDetail(generic.DeleteView):
+class ItemDetail(generic.DetailView):
     model=Item
 
