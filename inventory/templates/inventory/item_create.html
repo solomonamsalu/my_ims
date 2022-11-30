@@ -1,0 +1,9 @@
+{% extends "layouts/base.html" %}
+{%block msg%}
+<h1>add item</h1>
+<form class="form-horizontal" method="post"> 
+{% csrf_token%}
+{% load crispy-forms_tags%}
+{% crispy_form%}
+<input type="submmit" value="submmit">
+</form>
