@@ -11,3 +11,16 @@ class Customer(models.Model):
     address=models.TextField()
     def __str__(self) -> str:
         return self.first_name + "  "+ self.last_name
+class SalesOrder(models.Model):
+    customer=models.ForeignKey(Customer,on_delete=models.CASCADE)
+    sales_order_number=models.CharField(max_length=100)
+    store=models.ForeignKey(Store,on_delete=models.CASCADE)
+    quantity=models.IntegerField()
+    rate=models.FloatField()
+    amount=models.FloatField(null=True,blank=True)
+    date=models.DateField(auto_now_add=True)
+    def save(self,*args,**kwargs):
+        self.amount=self.quantity*self.rate
+        return super().save(*args,**kwargs)
+    def __str__(self) -> str:
+        return self.sales_order_number
