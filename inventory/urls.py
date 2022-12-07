@@ -7,6 +7,7 @@ urlpatterns=[
     path('<int:pk>/item_detail',views.ItemDetail.as_view()),
     path('index/',views.index),
     path('item_create/',views.itemcreate),
-    path('suppliers/',views.SupplierList.as_view(),name='suppliers')
+    path('suppliers/',views.SupplierList.as_view(),name='suppliers'),
+    path('<int:pk>/supplier_detail/',views.SupplierDetail.as_view(),name='supplier_detail')
     
 ]

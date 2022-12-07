@@ -1,0 +1,35 @@
+{% extends "layouts/base.html"%}
+{% block msg%}
+<div class="container">
+    <h1>Supplier detail</h1>
+   
+    
+<table class="table table-bordered table-hover table-dark" border="1" width="100%">
+    <thead class="table-success">
+    <tr>
+        <td>company</td>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>address</th>
+        
+    </tr></thead>
+    
+    <tr>
+        <td>{{supplier.company}}</td>
+        <td>{{supplier.first_name}}</td>
+        <td>{{supplier.last_name}}</td>
+        <td>{{supplier.email}}</td>
+        <td>{{supplier.phone}}</td>
+        <td>{{supplier.address}}</td>
+        
+        
+
+
+
+</tr>
+</table>
+</div>
+</div>
+{% endblock%}

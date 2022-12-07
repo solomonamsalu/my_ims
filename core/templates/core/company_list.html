@@ -1,0 +1,19 @@
+
+
+{% extends "layouts/base.html" %}
+{%block msg%}
+<div class="container">
+    <h1>items</h1>
+<table class="table table-bordered table-hover table-dark" border="1" width="100%">
+    <thead class="table-success">
+    <tr >
+        <h1><th>company-name</th></h1>
+    </tr></thead>
+    {%for i in company_list%}
+    <tr>
+        <td>{{i.name}}</td>
+</tr>
+{%endfor%}
+</table>
+</div>
+{%endblock%}
