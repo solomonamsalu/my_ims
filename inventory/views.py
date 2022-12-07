@@ -25,4 +25,8 @@ class ItemList(generic.ListView):
     model=Item    
 class ItemDetail(generic.DetailView):
     model=Item
+class SupplierList(generic.ListView):
+    model= Supplier  
+class SupplierDetail(generic.DetailView):
+    model=Supplier
 
