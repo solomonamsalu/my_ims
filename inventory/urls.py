@@ -3,10 +3,12 @@ from . import views
 urlpatterns=[
     # path('item_create',views.ItemCreate.as_view()),
     # url(r'form', views.AddItemForm, name='form'),
-    path('',views.ItemList.as_view(),name="items"),
-    path('<int:pk>/item_detail',views.ItemDetail.as_view()),
+    path('',views.ItemList.as_view(),name="item_list"),
+    path('<int:pk>/item_detail',views.ItemDetail.as_view(),name='item_detail'),
     path('index/',views.index),
-    path('item_create/',views.itemcreate),
+    path('item_create/',views.ItemCreate.as_view(),name='item_create'),
+    path('<int:pk>/item_update/',views.ItemUpdate.as_view(),name="item_update"),
+    path('<int:pk>/item_delete/',views.ItemDelete.as_view(),name='item_delete'),
     path('suppliers/',views.SupplierList.as_view(),name='suppliers'),
     path('<int:pk>/supplier_detail/',views.SupplierDetail.as_view(),name='supplier_detail')
     

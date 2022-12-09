@@ -7,6 +7,9 @@ from .forms import AddCompanyForm
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+@method_decorator(login_required, name='dispatch')
 class CompanyList(generic.ListView):
     model=Company
 class CompanyDetail(generic.DetailView):

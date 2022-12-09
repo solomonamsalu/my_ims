@@ -7,20 +7,23 @@ from .forms import AddItemForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.urls import reverse_lazy
 
 def index(request):
     item=Item.objects.all()
     return HttpResponse(item)
-def itemcreate(request):
-    if request.method=="POST":
-        form=AddItemForm(request.POST)
-        if form.is_valid():
-            form.save()
-    else:
-        form=AddItemForm
-    return render(request,'inventory/item_create.html',{'form':form})
+
 
 @method_decorator(login_required, name='dispatch')
+class ItemCreate(generic.CreateView):
+    model=Item
+    fields='__all__'
+class ItemUpdate(generic.UpdateView):
+    model=Item
+    fields="__all__"
+class ItemDelete(generic.DeleteView):
+    model=Item
+    success_url=reverse_lazy('item_list')
 class ItemList(generic.ListView):
     model=Item    
 class ItemDetail(generic.DetailView):

@@ -2,6 +2,7 @@ from enum import unique
 from django.db import models
 
 from core.models import Company,Store
+from django.urls import reverse
 
 class Supplier(models.Model):
     company=models.ForeignKey(Company,on_delete=models.CASCADE,null=True,blank=True,related_name='suppliers')
@@ -25,3 +26,5 @@ class Item(models.Model):
     preferred_supplier=models.ForeignKey(Supplier,on_delete=models.CASCADE,related_name='items')
     def __str__(self) -> str:
         return self.name
+    def get_absolute_url(self):
+        return reverse('item_detail',kwargs={ 'pk':self.pk})
