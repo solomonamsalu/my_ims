@@ -32,4 +32,12 @@ class SupplierList(generic.ListView):
     model= Supplier  
 class SupplierDetail(generic.DetailView):
     model=Supplier
-
+class SupplierCreate(generic.CreateView):
+    model=Supplier
+    fields='__all__'
+class SupplierUpdate(generic.UpdateView):
+    model=Supplier
+    fields="__all__"
+class SupplierDelete(generic.DeleteView):
+    model=Supplier
+    success_url=reverse_lazy('supplier_list')

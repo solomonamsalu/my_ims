@@ -1,0 +1,5 @@
+<p>Are you sure you want to delete the supplier: {{ supplier }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Yes, delete." />
