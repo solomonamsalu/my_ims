@@ -1,0 +1,21 @@
+
+{% extends "layouts/base.html" %}
+{%block msg%}
+<div class="container">
+    <h1>stores</h1>
+<table class="table table-bordered table-hover table-dark" border="1" width="100%">
+    <thead class="table-success">
+    <tr>
+        <th class="jumbotron">store_number</th>
+        <th class="jumbotron">company</th>
+    </tr>
+</thead>
+{%for i in store_list%}
+    <tr>
+    <td>{{i.store_number}}</td>
+        <td>{{i.company}}</td>
+        {%endfor%}
+</tr>
+</table>
+</div>
+{%endblock%}

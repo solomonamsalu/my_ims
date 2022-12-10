@@ -1,0 +1,20 @@
+
+{% extends "layouts/base.html" %}
+{%block msg%}
+<div class="container">
+    <h1>store_detail</h1>
+<table class="table table-bordered table-hover table-dark" border="1" width="100%">
+    <thead class="table-success">
+    <tr >
+        <th>company</th>
+        <th>store_number</th>
+        <th>address</th>
+    </tr></thead>
+    <tr>
+        <td>{{store.company}}</td>
+        <td>{{store.store_number}}</td>
+        <td>{{store.address}}</td>
+</tr>
+</table>
+</div>
+{%endblock%}

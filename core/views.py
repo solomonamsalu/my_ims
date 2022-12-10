@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Company
+from .models import Company,Store
 from django.views import generic
 from django.http import HttpResponse,HttpRequest,HttpResponseRedirect
 from django.views.generic.edit import CreateView, DeleteView, UpdateView, FormView
@@ -24,3 +24,17 @@ class CompanyUpdate(generic.UpdateView):
 class CompanyDelete(generic.DeleteView):
    model=Company
    success_url=reverse_lazy('company_list')
+class StoreList(generic.ListView):
+    model=Store
+class StoreDetail(generic.DetailView):
+   model=Store
+class StoreCreate(generic.CreateView):
+   model=Store
+   fields='__all__'
+class StoreUpdate(generic.UpdateView):
+   model=Store
+   fields='__all__'
+   # success_url=reverse_lazy('store_detail')
+class StoreDelete(generic.DeleteView):
+   model=Store
+   success_url=reverse_lazy('store_list')

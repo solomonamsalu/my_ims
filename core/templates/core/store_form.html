@@ -1,9 +1,9 @@
 {% extends "layouts/base.html" %}
 {%block msg%}
-<h1>add company</h1>
+<h1>add store</h1>
 <form method="POST" style="margin-left:15px"> 
     <fieldset>
-    <legend>insert company</legend>
+    <legend>insert store</legend>
 {% csrf_token%}
 {{form.as_p}}
 <input type="submit" value="submit">
