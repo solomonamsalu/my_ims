@@ -1,6 +1,7 @@
 from django.db import models
 from inventory.models import Supplier,Item
-class PurhaseOrder(models.Model):
+from django.urls import reverse
+class Purchaseorder(models.Model):
     STATUS_CHOISES=[
         ('TRANSIT','TRANSIT'),
         ('RECEIVED','RECEIVED'),
@@ -19,6 +20,10 @@ class PurhaseOrder(models.Model):
         return super().save(*args,**kwargs)
     def __str__(self) -> str:
         return self.purchase_order_number
+    def get_absolute_url(self):
+        return reverse('purchaseorder_detail',kwargs={'pk':self.pk})
+
+
 
 
 
