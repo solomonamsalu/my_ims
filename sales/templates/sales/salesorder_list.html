@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+{%block msg%}
+<h1>salesorders</h1>
+<table class="table table-bordered table-hover table-dark" border="1" width="100%">
+    <tr>
+        <th>sales number</th>
+        <th>item</th>
+</tr>
+    {% for i in salesorder_list%}
+    <tr>
+       <td>{{i.sales_order_number}}</td> 
+        <td>{{i.item}}</td>
+    </tr>
+    {%endfor%}
+</table>
+{%endblock%}

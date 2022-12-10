@@ -1,6 +1,7 @@
 
 from django.db import models
 from core.models import Store
+from inventory.models import Item
 
 # Create your models here.
 class Customer(models.Model):
@@ -11,7 +12,8 @@ class Customer(models.Model):
     address=models.TextField()
     def __str__(self) -> str:
         return self.first_name + "  "+ self.last_name
-class SalesOrder(models.Model):
+class Salesorder(models.Model):
+    item=models.ForeignKey(Item,on_delete=models.CASCADE,default='null')
     customer=models.ForeignKey(Customer,on_delete=models.CASCADE)
     sales_order_number=models.CharField(max_length=100)
     store=models.ForeignKey(Store,on_delete=models.CASCADE)

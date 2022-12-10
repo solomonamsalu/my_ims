@@ -1,0 +1,26 @@
+{% extends "layouts/base.html" %}
+{%block msg%}
+<h1>puchaseorder detail</h1>
+<table class="table table-bordered table-hover table-dark" border="1" width="100%" >
+    <thead>
+        <th>item</th>
+        <th>customer</th>
+        <th>sales_order_number</th>
+        <th>store</th>
+        <th>quantity</th>
+        <th>rate</th>
+        <th>amount</th>
+        <th>date</th>
+    </thead>
+    <tr>
+        <th>{{salesorder.item}}</th>
+        <th>{{salesorder.customer}}</th>
+        <th>{{salesorder.sales_order_number}}</th>
+        <th>{{salesorder.store}}</th>
+        <th>{{salesorder.quantity}}</th>
+        <th>{{salesorder.rate}}</th>
+        <th>{{salesorder.amount}}</th>
+        <th>{{salesorder.date}}</th>
+    </tr>
+</table>
+{%endblock%}

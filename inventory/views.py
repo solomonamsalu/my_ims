@@ -18,26 +18,35 @@ def index(request):
 class ItemCreate(generic.CreateView):
     model=Item
     fields='__all__'
+@method_decorator(login_required, name='dispatch')
 class ItemUpdate(generic.UpdateView):
     model=Item
     fields="__all__"
+@method_decorator(login_required, name='dispatch')
 class ItemDelete(generic.DeleteView):
     model=Item
     success_url=reverse_lazy('item_list')
+@method_decorator(login_required, name='dispatch')
 class ItemList(generic.ListView):
     model=Item    
+@method_decorator(login_required, name='dispatch')
 class ItemDetail(generic.DetailView):
     model=Item
+@method_decorator(login_required, name='dispatch')
 class SupplierList(generic.ListView):
-    model= Supplier  
+    model= Supplier 
+@method_decorator(login_required, name='dispatch')
 class SupplierDetail(generic.DetailView):
     model=Supplier
+@method_decorator(login_required, name='dispatch')
 class SupplierCreate(generic.CreateView):
     model=Supplier
     fields='__all__'
+@method_decorator(login_required, name='dispatch')
 class SupplierUpdate(generic.UpdateView):
     model=Supplier
     fields="__all__"
+@method_decorator(login_required, name='dispatch')
 class SupplierDelete(generic.DeleteView):
     model=Supplier
     success_url=reverse_lazy('supplier_list')
