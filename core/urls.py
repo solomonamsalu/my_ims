@@ -10,5 +10,6 @@ urlpatterns=[
  path('<int:pk>/store_detail',views.StoreDetail.as_view(),name='store-detail'),
  path('store_create/',views.StoreCreate.as_view(),name='store_create'),
  path('<int:pk>/store_update/',views.StoreUpdate.as_view(),name='store_update'),
- path('<int:pk>/store_delete/',views.StoreDelete.as_view(),name='store_delete')
+ path('<int:pk>/store_delete/',views.StoreDelete.as_view(),name='store_delete'),
+  path("register", views.register_request, name="register")
 ]
