@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+{%block msg%}
+<h1>Customer detail</h1>
+<table class="table table-bordered table-hover table-dark" border="1" width="100%" >
+        <tr>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>store</th>
+            <th>phone</th>
+            <th>address</th>
+        </tr>
+    <tr>
+       <td>{{customer.first_name}}</td>
+       <td>{{customer.last_name}}</td>
+       <td>{{customer.store}}</td>
+       <td>{{customer.phone}}</td>
+       <td>{{customer.address}}</td>
+
+    </tr>
+</table>
+{%endblock%}
