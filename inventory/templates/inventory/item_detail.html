@@ -3,22 +3,20 @@
 <div class="container">
     <h1>item detail</h1>
    
-    
 <table class="table table-bordered table-hover table-dark" border="1" width="100%">
-    <thead class="table-success">
-    <tr >
-        <th>name</th>
-        <th>store</th>
+    <thead>
+    <tr class="table-success">
+        <th>Name</th>
+        <th>Store</th>
         <th>SKU number</th>
-        <th>cost_price</th>
-        <th>selling_price</th>
-        <th>maxstock</th>
-        <th>onhand stock</th>
-        <th>reorder point</th>
-        <th>supplier</th>
-        
-        
-    </tr></thead>
+        <th>Cost_Price</th>
+        <th>Selling_Price</th>
+        <th>Maxstock</th>
+        <th>Onhand_Stock</th>
+        <th>Reorder_Point</th>
+        <th>Supplier</th>
+        </tr>
+    </thead>
     
     <tr>
         <td>{{item.name}}</td>
@@ -35,10 +33,10 @@
 
 
 </tr>
-</table>
-<button class="btn-primary" type="button" style="text-align:right"><a href="{%url 'item_update' pk=item.id %}">Edit</a></button>
-<button class="btn-primary" type="button" style="text-align:right"><a href="{%url 'item_delete' pk=item.id %}">Delete</a></button>
-
+</table><div class="btn-group">
+<a href="{%url 'item_update' pk=item.id %}"><button class="btn btn-outline-primary" type="button" style="text-align:right">Edit</button></a>
+<a href="{%url 'item_delete' pk=item.id %}"><button class="btn btn-outline-danger" type="button" style="text-align:right">Delete</button></a>
+</div>
 
 </div>
 </div>
