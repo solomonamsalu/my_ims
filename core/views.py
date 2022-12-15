@@ -13,8 +13,21 @@ from .forms import NewUserForm
 from django.contrib.auth import login
 from django.contrib import messages
 from django.contrib.auth.models import User
+from inventory.models import Item
+from purchase.models import Purchaseorder
+@login_required(login_url="/accounts/login/")
 def home(request):
-   return render(request,template_name='core/home.html')
+   low_stock_items = Item.objects.filter(store=request.user.store).filter(on_hand_stock = F('reorder_point')).count()
+   all_items = Item.objects.filter(store=request.user.store).count()
+   quantity_in_hand = Item.objects.filter(store=request.user.store).aggregate(quantity_in_hand=Sum('on_hand_stock'))
+   quantity_to_be_received =Purchaseorder.objects.filter(item__store = request.user.store, status = 'TRANSIT').aggregate(quantity_to_be_received = Sum('quantity'))
+   context = {
+            'low_stock_items': low_stock_items,
+            'all_items': all_items,
+            'quantity_in_hand': quantity_in_hand,
+            'quantity_to_be_received': quantity_to_be_received
+        }
+   return render(request,template_name='core/home.html',context=context)
 def register_request(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)
