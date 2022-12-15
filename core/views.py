@@ -13,6 +13,8 @@ from .forms import NewUserForm
 from django.contrib.auth import login
 from django.contrib import messages
 from django.contrib.auth.models import User
+def home(request):
+   return render(request,template_name='core/home.html')
 def register_request(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)

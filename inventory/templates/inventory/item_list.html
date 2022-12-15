@@ -2,21 +2,22 @@
 {% extends "layouts/base.html" %}
 {%block msg%}
 <div class="container pt-4">
-    <h1>items</h1>
+    <h1 class="display-3 text-primary">Items</h1>
 <table class="table table-bordered table-hover table-dark" border="1" width="100%">
     <thead class="table-success">
-    <tr >
-        <h1><th>name</th></h1>
+    <tr class="display-6">
+        <th >name</th>
         <th>cost_price</th>
         <th>selling_price</th>
     </tr></thead>
     {%for i in item_list%}
     <tr>
-        <td>{{i.name}}</td>
+        <td><a href="{% url 'item_detail' pk=i.id %}">{{i.name}}</a></td>
         <td>{{i.cost_price}}</td>
         <td>{{i.selling_price}}</td>
 </tr>
 {%endfor%}
 </table>
+<button class="btn-primary" type="button" style="text-align:right"><a href="{%url 'item_create'%}">Add Item</a></button>
 </div>
 {%endblock%}
