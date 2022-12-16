@@ -8,23 +8,21 @@
   }
   
   .sidenav {
+    margin-top: 40px;
     height: 100%;
     width:250px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: rgb(123, 121, 148);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
   }
-  
   .sidenav a {
-    padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    color: hsl(0, 39%, 20%);
     display: block;
     transition: 0.3s;
   }
@@ -54,14 +52,40 @@
 </head>
 <body>
 <div class="sidenav">
-  <a href="{%url 'home'%}">Home</a>
-  <a href="{%url 'company_list'%}">companys</a>
-  <a href="{%url 'store_list'%}">stores</a>
-  <a href="{%url 'item_list'%}">Items</a>
-  <a href="{%url 'supplier_list '%}">Suppliers</a>
-  <a href="{%url 'customer_list'%}">Customers</a>
-  <a href="{%url 'salesorder_list'%}">salesorders</a>
-  <a href="{%url 'purchaseorder_list'%}">purchaseorders</a>
+ <button class="btn btn-primary"><a href="{%url 'home'%}">Home</a></button>
+ <br>
+ <br>
+  <div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Core </button>
+    <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="{%url 'company_list'%}">companys</a></li>
+   <li><a class="dropdown-item" href="{%url 'store_list'%}">stores</a></li>
+    </ul>
+  </div>
+  <br>
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Inventory</button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="{%url 'item_list'%}">Items</a></li>
+    <li><a class="dropdown-item" href="{%url 'supplier_list '%}">Suppliers</a></li>
+  </ul>
+</div>
+  <br>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">SalesOrder</button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="{%url 'customer_list'%}">Customers</a></li>
+        <li><a class="dropdown-item" href="{%url 'salesorder_list'%}">salesorders</a></li>
+      </ul>
+  </div>
+  <br>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">PurchaseOrder</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="{%url 'purchaseorder_list'%}">purchaseorders</a></li>
+    </ul>
+  </div>
+  
   <a href="#">Contact</a>
   <a href="#">About</a> 
 </div>
