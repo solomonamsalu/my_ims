@@ -7,13 +7,16 @@
 <table class="table table-borderless table-hover table-dark">
     <thead class="table-success">
     <tr >
-        <h1><th>company-name</th></h1>
+        <th>company-name</th>
     </tr></thead>
     {%for i in company_list%}
     <tr>
-        <td>{{i.name}}</td>
+        <td><a href="{% url 'company_detail' pk=i.id %}">{{i.name}}</a></td>
+
 </tr>
 {%endfor%}
 </table>
+<a href="{%url 'company_create'%}"><button style="float:right;" class="btn btn-outline-info" type="button" ">Add Company</button></a>
+
 </div>
 {%endblock%}

@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 {%block msg%}
-<h1>puchaseorder detail</h1>
+<h1>salesorder detail</h1>
 <table class="table table-bordered table-hover table-dark" border="1" width="100%" >
     <thead>
         <th>item</th>
@@ -23,4 +23,6 @@
         <th>{{salesorder.date}}</th>
     </tr>
 </table>
+<a href="{%url 'salesorder_update' pk=salesorder.id %}"><button class="btn btn-outline-primary" type="button" style="text-align:right">Edit</button></a>
+<a href="{%url 'salesorder_delete' pk=salesorder.id %}"><button class="btn btn-outline-danger" type="button" style="text-align:right">Delete</button></a>
 {%endblock%}

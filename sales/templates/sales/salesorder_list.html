@@ -1,16 +1,18 @@
 {% extends "layouts/base.html" %}
 {%block msg%}
-<h1>salesorders</h1>
+<h1 style="text-align: right;">salesorders</h1>
 <table class="table table-bordered table-hover table-dark" border="1" width="100%">
     <tr class="display-6">
-        <th>sales number</th>
+        <th>salesOrder number</th>
         <th>item</th>
 </tr>
     {% for i in salesorder_list%}
     <tr>
-       <td>{{i.sales_order_number}}</td> 
+       <td><a href="{% url 'salesorder_detail' pk=i.id %}">{{i.sales_order_number}}</td> </a>
         <td>{{i.item}}</td>
     </tr>
     {%endfor%}
 </table>
+<a href="{%url 'salesorder_create'%}"><button style="float:right;" class="btn btn-outline-info" type="button" > Add Salesorder</button></a>
+
 {%endblock%}

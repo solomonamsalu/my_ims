@@ -8,9 +8,11 @@
 </tr>
     {% for i in purchaseorder_list%}
     <tr>
-       <td>{{i.purchase_order_number}}</td> 
+       <td><a href="{% url 'purchaseorder_detail' pk=i.id%}">{{i.purchase_order_number}}</td> </a>
         <td>{{i.item}}</td>
     </tr>
     {%endfor%}
 </table>
+<a href="{%url 'purchaseorder_create'%}"><button style="float:right;" class="btn btn-outline-info" type="button" >Add Purchaseorder</button></a>
+
 {%endblock%}

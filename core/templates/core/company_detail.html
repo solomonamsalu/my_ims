@@ -12,5 +12,7 @@
         <td>{{company.name}}</td>
 </tr>
 </table>
+<a href="{%url 'company_update' pk=company.id %}"><button class="btn btn-outline-primary" type="button" style="text-align:right">Edit</button></a>
+<a href="{%url 'company_delete' pk=company.id %}"><button class="btn btn-outline-danger" type="button" style="text-align:right">Delete</button></a>
 </div>
 {%endblock%}

@@ -8,9 +8,11 @@
 </tr>
     {% for i in customer_list%}
     <tr>
-       <td>{{i.first_name}}</td> 
+       <td><a href="{%url 'customer_detail' pk=i.id %}">{{i.first_name}}</td></a>
         <td>{{i.last_name}}</td>
     </tr>
     {%endfor%}
 </table>
+<a href="{%url 'customer_create'%}"><button style="float:right;" class="btn btn-outline-info" type="button">Add Customer</button></a>
+
 {%endblock%}

@@ -25,4 +25,6 @@
         <th>{{purchaseorder.status}}</th>
     </tr>
 </table>
+<a href="{%url 'purchaseorder_update' pk=purchaseorder.id %}"><button class="btn btn-outline-primary" type="button" style="text-align:right">Edit</button></a>
+<a href="{%url 'purchaseorder_delete' pk=purchaseorder.id %}"><button class="btn btn-outline-danger" type="button" style="text-align:right">Delete</button></a>
 {%endblock%}

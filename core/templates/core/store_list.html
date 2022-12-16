@@ -12,10 +12,12 @@
 </thead>
 {%for i in store_list%}
     <tr>
-    <td>{{i.store_number}}</td>
-        <td>{{i.company}}</td>
+    <td><a href="{%url 'store-detail' pk=i.id%}">{{i.store_number}}</a></td>
+    <td>{{i.company}}</td>
         {%endfor%}
 </tr>
 </table>
+<a href="{%url 'store_create'%}"><button style="float:right;" class="btn btn-outline-info" type="button">Add Store</button></a>
+
 </div>
 {%endblock%}

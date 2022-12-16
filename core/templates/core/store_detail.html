@@ -6,15 +6,17 @@
 <table class="table table-bordered table-hover table-dark" border="1" width="100%">
     <thead class="table-success">
     <tr >
-        <th>company</th>
         <th>store_number</th>
+        <th>company</th>
         <th>address</th>
     </tr></thead>
     <tr>
-        <td>{{store.company}}</td>
         <td>{{store.store_number}}</td>
+        <td>{{store.company}}</td>
         <td>{{store.address}}</td>
 </tr>
 </table>
+<a href="{%url 'store_update' pk=store.id %}"><button class="btn btn-outline-primary" type="button" style="text-align:right">Edit</button></a>
+<a href="{%url 'store_delete' pk=store.id %}"><button class="btn btn-outline-danger" type="button" style="text-align:right">Delete</button></a>
 </div>
 {%endblock%}
