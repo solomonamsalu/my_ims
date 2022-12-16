@@ -6,8 +6,8 @@
     
 <table class="table table-bordered table-hover table-dark" border="1" width="100%">
     <thead class="table-success">
-    <tr>
-        <td>company</td>
+    <tr class="display-6">
+        <th>company</th>
         <th>first_name</th>
         <th>last_name</th>
         <th>email</th>
@@ -31,5 +31,7 @@
 </tr>
 </table>
 </div>
+<a href="{%url 'supplier_update' pk=supplier.id %}"><button class="btn btn-outline-primary" type="button" style="text-align:right">Edit</button></a>
+<a href="{%url 'supplier_delete' pk=supplier.id %}"><button class="btn btn-outline-danger" type="button" style="text-align:right">Delete</button></a>
 </div>
 {% endblock%}

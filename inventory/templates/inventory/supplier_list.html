@@ -5,17 +5,18 @@
     <h1>Suppliers</h1>
 <table class="table table-bordered table-hover table-dark" border="1" width="100%">
     <thead class="table-success">
-    <tr >
+    <tr  class="display-6">
         <h1><th>first_name</th></h1>
         <th>last_name</th>
        
     </tr></thead>
     {%for i in supplier_list%}
     <tr>
-        <td>{{i.first_name}}</td>
+        <td><a href="{%url 'supplier_detail' pk=i.id%}">{{i.first_name}}</a></td>
         <td>{{i.last_name}}</td>
 </tr>
 {%endfor%}
 </table>
+<a href="{%url 'supplier_create'%}"><button class="btn btn-outline-info" type="button" style="text-align:right">Add Supplier</button></a>
 </div>
 {%endblock%}

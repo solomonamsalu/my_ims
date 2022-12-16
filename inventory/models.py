@@ -14,7 +14,7 @@ class Supplier(models.Model):
     def __str__(self) -> str:
         return self.first_name + " " + self.last_name
     def get_absolute_url(self):
-        return reverse('supplier-detail', kwargs={'pk': self.pk})
+        return reverse('supplier_detail', kwargs={'pk': self.pk})
 class Item(models.Model):
     name=models.CharField(max_length=200)
     store=models.ForeignKey(Store,on_delete=models.CASCADE, null=True,blank=True,related_name='items')
