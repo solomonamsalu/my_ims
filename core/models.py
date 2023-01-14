@@ -7,7 +7,7 @@ class Company(models.Model):
     def __str__(self) -> str:
         return self.name
     def get_absolute_url(self):
-        return reverse('company-detail', kwargs={'pk': self.pk})
+        return reverse('company_detail', kwargs={'pk': self.pk})
 class Store(models.Model):
     company=models.ForeignKey(Company,on_delete=models.CASCADE,null=True,blank=True)
     store_number=models.CharField(max_length=200)
