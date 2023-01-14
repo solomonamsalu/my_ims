@@ -7,9 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background:rgb(240, 231, 231);
+            opacity: 1;
+        }
+    </style>
 </head>
-    {%include '/home/tsigu/Desktop/Project Folders/djnago_projects/myims/my_ims/templates/layouts/navigation.html' %}
-    {%include '/home/tsigu/Desktop/Project Folders/djnago_projects/myims/my_ims/templates/layouts/sidenav.html' %}
+{% include "./navigation.html" %}
+{%include './sidenav.html' %}
     <div style="margin-left: 250px; margin-top: 50px;">
 {%block msg%}
 {%endblock%}
