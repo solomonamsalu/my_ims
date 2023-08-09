@@ -22,6 +22,7 @@ class Purchaseorder(models.Model):
         return self.purchase_order_number
     def get_absolute_url(self):
         return reverse('purchaseorder_detail',kwargs={'pk':self.pk})
+    
 
 
 

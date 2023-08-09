@@ -1,14 +1,56 @@
-<div class="bg bg-success">
 {% extends "layouts/base.html" %}
-{%block msg%}
-<h1 class="container pt-3 my-5 border bg-dark text-white">Inventory Management System</h1>
-<div class="list-group bg-success">
-<li class="list-group-item list-group-item-success list-group-item-action"><h3>number of different  items  <span class="badge rounded-pill rounded-pill bg-secondary">{{items}}</span></h3></li>
-<li class="list-group-item list-group-item-secondary list-group-item-action"><h3>number of different  customers  <span class="badge rounded-pill bg-secondary">{{customers}}</span></h3></li>
-<li class="list-group-item list-group-item-info list-group-item-action"><h3>number of different  suppliers  <span class="badge rounded-pill bg-secondary">{{suppliers}}</span></h3></li>
-<li class="list-group-item list-group-item-danger list-group-item-action"><h3>number of different  purchaseorders  <span class="badge rounded-pill bg-secondary">{{purchaseorders}}</span></h3></li>
-<li class="list-group-item list-group-item-primary list-group-item-action"><h3>number of different  salesorders  <span class="badge rounded-pill bg-secondary">{{salesorders}}</span></h3></li>
+
+
+{% block content %}
+
+<div class="text-center mb-4">
+    <h2>Welcome to the Inventory Management System</h2>
+    <br>
+    <p>Quick statistics about our current inventory:</p>
+    <br>
 </div>
-ssssssss
-{%endblock%}
+
+<div class="row justify-content-center">
+    <div class="col-md-4 mb-3">
+        <div class="card text-dark bg-success">
+            <div class="card-body">
+                <h4 class="card-title">Items</h4>
+                <p class="display-4">{{ items }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card text-dark bg-secondary">
+            <div class="card-body">
+                <h4 class="card-title">Customers</h4>
+                <p class="display-4">{{ customers }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card text-dark bg-info">
+            <div class="card-body">
+                <h4 class="card-title">Suppliers</h4>
+                <p class="display-4">{{ suppliers }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card text-dark bg-danger">
+            <div class="card-body">
+                <h4 class="card-title">Purchase Orders</h4>
+                <p class="display-4">{{ purchaseorders }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card text-dark bg-primary">
+            <div class="card-body">
+                <h4 class="card-title">Sales Orders</h4>
+                <p class="display-4">{{ salesorders }}</p>
+            </div>
+        </div>
+    </div>
 </div>
+
+{% endblock %}

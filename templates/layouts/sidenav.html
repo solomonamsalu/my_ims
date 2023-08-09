@@ -1,98 +1,86 @@
-
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body {
-  
-  font-family: "Lato", sans-serif;
-  background:rgb(221, 216, 216);
-}
 
+<style>
+    .sidenav {
+        height: 100vh;
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #343a40; /* dark gray from Bootstrap */
+        overflow-y: auto; /* Allows the sidebar to scroll if the content is too much */
+        padding-top: 40px;
+        transition: all 0.3s;
+        border-right: 1px solid rgba(255, 255, 255, 0.1); /* subtle border */
+    }
 
+    .sidenav a, .sidenav button {
+        text-decoration: none;
+        display: block;
+        transition: all 0.3s;
+        color: #adb5bd; /* Bootstrap's secondary gray */
+    }
 
-.sidenav {
-margin-top: 40px;
-height: 100%;
-width:250px;
-position: fixed;
-z-index: 1;
-top: 0;
-left: 0;
-background-color: rgba(255,0,255,0.7);
-overflow-x: hidden;
-transition: 0.5s;
-padding-top: 60px;
-}
-.sidenav a {
-text-decoration: none;
-color: hsl(0, 39%, 20%);
-display: block;
-transition: 0.3s;
-}
+    .sidenav a:hover, .sidenav button:hover {
+        color: #ffffff;
+        background-color: rgba(0, 123, 255, 0.1); /* Bootstrap's primary blue with low opacity */
+    }
 
-.sidenav a:hover {
-color: #f1f1f1;
-}
+    .dropdown-menu {
+        margin-top: -1px; /* Removes the gap between button and dropdown */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-.sidenav .closebtn {
-position: absolute;
-top: 0;
-right: 25px;
-font-size: 36px;
-margin-left: 50px;
-}
+    .dropdown-menu a {
+        color: #adb5bd;
+    }
 
-#main {
-transition: margin-left .5s;
-padding: 16px;
-}
+    .dropdown-menu a:hover {
+        color: #ffffff;
+        background-color: rgba(0, 123, 255, 0.1);
+    }
 
-@media screen and (max-height: 450px) {
-.sidenav {padding-top: 15px;}
-.sidenav a {font-size: 18px;}
-}
-  </style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    /* Responsive: hide sidebar on small screens and provide a toggle button */
+    @media screen and (max-width: 767px) {
+        .sidenav {
+            width: 0;
+        }
 
-</head>
-<body>
+        .sidenav.toggled {
+            width: 250px;
+        }
+    }
+</style>
+
 <div class="sidenav">
- <button class="btn btn-primary"><a href="{%url 'home'%}">Home</a></button>
- <br>
- <br>
-  <div class="dropdown">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Core </button>
-    <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="{%url 'company_list'%}">companys</a></li>
-   <li><a class="dropdown-item" href="{%url 'store_list'%}">stores</a></li>
-    </ul>
-  </div>
-  <br>
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Inventory</button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="{%url 'item_list'%}">Items</a></li>
-    <li><a class="dropdown-item" href="{%url 'supplier_list'%}">Suppliers</a></li>
-  </ul>
-</div>
-  <br>
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">SalesOrder</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="{%url 'customer_list'%}">Customers</a></li>
-        <li><a class="dropdown-item" href="{%url 'salesorder_list'%}">salesorders</a></li>
-      </ul>
-  </div>
-  <br>
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">PurchaseOrder</button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="{%url 'purchaseorder_list'%}">purchaseorders</a></li>
-    </ul>
-  </div>
-  
-  <a href="#">Contact</a>
-  <a href="#">About</a> 
+    <a href="{%url 'home'%}" class="nav-link">Home</a>
+    <div class="dropdown">
+        <button class="btn btn-transparent w-100 text-start" data-bs-toggle="dropdown">Core</button>
+        <ul class="dropdown-menu w-100">
+            <li><a class="dropdown-item" href="{%url 'company_list'%}">Companys</a></li>
+            <li><a class="dropdown-item" href="{%url 'store_list'%}">Stores</a></li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-transparent w-100 text-start" data-bs-toggle="dropdown">Inventory</button>
+        <ul class="dropdown-menu w-100">
+            <li><a class="dropdown-item" href="{%url 'item_list'%}">Items</a></li>
+            <li><a class="dropdown-item" href="{%url 'supplier_list'%}">Suppliers</a></li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-transparent w-100 text-start" data-bs-toggle="dropdown">SalesOrder</button>
+        <ul class="dropdown-menu w-100">
+            <li><a class="dropdown-item" href="{%url 'customer_list'%}">Customers</a></li>
+            <li><a class="dropdown-item" href="{%url 'salesorder_list'%}">Salesorders</a></li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-transparent w-100 text-start" data-bs-toggle="dropdown">PurchaseOrder</button>
+        <ul class="dropdown-menu w-100">
+            <li><a class="dropdown-item" href="{%url 'purchaseorder_list'%}">Purchaseorders</a></li>
+        </ul>
+    </div>
+    <a href="#" class="nav-link">Contact</a>
+    <a href="#" class="nav-link">About</a>
 </div>

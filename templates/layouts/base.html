@@ -8,17 +8,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            background:rgb(240, 231, 231);
-            opacity: 1;
+        body {
+            background: #f1f5f9; /* A smoother shade of gray for a more relaxed appearance */
+            font-family: 'Arial', sans-serif;
+        }
+
+        .main-content {
+            margin-left: 260px; /* Slightly increased for breathing room */
+            margin-top: 60px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.05); /* subtle shadow to give a floating effect */
+        }
+
+        @media screen and (max-width: 992px) {
+            .main-content {
+                margin-left: 20px;
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
+<body>
+
 {% include "./navigation.html" %}
-{%include './sidenav.html' %}
-    <div style="margin-left: 250px; margin-top: 50px;">
-{%block msg%}
-{%endblock%}
+{% include './sidenav.html' %}
+
+<div class="main-content">
+    {% block content %}{% endblock %}
 </div>
+
 </body>
 </html>
